@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blacket Blook Creator</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-blacket"></div>
+
+  <div class="container-total">
+    <div id="logo">
+      <h1>Blacket Blook Creator</h1>
+      <p>made by <a href="https://github.com/tboyj" target="_blank">@tboyj</a></p>
+    </div>
+
+    <div id="app">
+      <div id="topbar">
+        <button class="tab active" data-cat="body">
+          <span class="tab-icon"><i data-lucide="person-standing"></i></span>
+          <span class="tab-label">Body</span>
+        </button>
+        <button class="tab" data-cat="hat">
+          <span class="tab-icon"><i data-lucide="hard-hat"></i></span>
+          <span class="tab-label">Hat</span>
+        </button>
+        <button class="tab" data-cat="clothes">
+          <span class="tab-icon"><i data-lucide="shirt"></i></span>
+          <span class="tab-label">Clothes</span>
+        </button>
+        <button class="tab" data-cat="face">
+          <span class="tab-icon"><i data-lucide="laugh"></i></span>
+          <span class="tab-label">Face</span>
+        </button>
+        <button class="tab" data-cat="accessory">
+          <span class="tab-icon"><i data-lucide="gem"></i></span>
+          <span class="tab-label">Accessory</span>
+        </button>
+
+        <div class="export-dropdown" id="export-dropdown">
+          <button class="save-btn" id="save-btn">Import/Export</button>
+          <div class="dropdown-menu" id="dropdown-menu">
+            <div class="dropdown-section-label">Save/Load</div>
+            <button class="dropdown-item" id="btn-save"><i data-lucide="file-down"></i> Save...</button>
+            <button class="dropdown-item" id="btn-load"><i data-lucide="file-up"></i> Load/Import...</button>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-section-label">Export</div>
+            <button class="dropdown-item" id="btn-export-png"><i data-lucide="image-down"></i> Export as PNG...</button>
+          </div>
+        </div>
+
+        <input type="file" id="file-input" accept="image/*">
+      </div>
+
+      <div id="canvas-area">
+        <div id="bg-layer"></div>
+        <canvas id="blook-canvas" width="300" height="345"></canvas>
+        <button class="bg-btn" id="bg-btn">
+          <i data-lucide="image-up"></i>
+        </button>
+      </div>
+
+      <div id="sidebar">
+        <div id="items-panel"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="items.js"></script>
+  <script src="render.js"></script>
+  <script src="app.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
